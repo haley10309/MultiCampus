@@ -8,12 +8,14 @@ public class Operator {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
+
         System.out.println("첫번 째 수: ");
         int num1 = Integer.parseInt(br.readLine());
         System.out.println("두번 째 수: ");
         int num2 = Integer.parseInt(br.readLine());
         System.out.println("연산자: ");
         String line = br.readLine();
+        
         char operator = line.charAt(0);
         double result = 0 ;
         switch (operator) {
