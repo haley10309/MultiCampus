@@ -9,13 +9,16 @@ public class MyDateTest {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         MyDate day1 = new MyDate(0, 0, 0);
+        
         System.out.println("년도 : ");
         day1.setYear(Integer.parseInt(br.readLine()));
         System.out.println("월:");
         day1.setMonth(Integer.parseInt(br.readLine()));
         System.out.println("일: ");
+
         day1.setDay(Integer.parseInt(br.readLine()));
-        boolean result = day1.isValid(day1); //함수 사용하려면 함수를 둘러싸고 있는 패키지도 함께 쓰기!
+
+        boolean result = day1.isValid(day1);
         if(result == true){
             sb.append("가능한 날짜 입니다.").append("\n");
         
@@ -23,5 +26,6 @@ public class MyDateTest {
             sb.append("불가능한 날짜 입니다.").append("\n");
         }
         System.out.println(sb);
+        br.close();
     }
 }
