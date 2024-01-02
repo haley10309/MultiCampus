@@ -1,0 +1,27 @@
+package Class_Excercise;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class MyDateTest {
+    public static void main(String[]args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        MyDate day1 = new MyDate(0, 0, 0);
+        System.out.println("년도 : ");
+        day1.setYear(Integer.parseInt(br.readLine()));
+        System.out.println("월:");
+        day1.setMonth(Integer.parseInt(br.readLine()));
+        System.out.println("일: ");
+        day1.setDay(Integer.parseInt(br.readLine()));
+        boolean result = day1.isValid(day1); //함수 사용하려면 함수를 둘러싸고 있는 패키지도 함께 쓰기!
+        if(result == true){
+            sb.append("가능한 날짜 입니다.").append("\n");
+        
+        }else{
+            sb.append("불가능한 날짜 입니다.").append("\n");
+        }
+        System.out.println(sb);
+    }
+}
