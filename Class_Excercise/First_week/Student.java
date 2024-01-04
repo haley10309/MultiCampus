@@ -1,4 +1,4 @@
-package Class_Excercise;
+package Class_Excercise.First_week;
 
 public class Student {
     private static int serialNum = 1000; // 일련번호
@@ -22,7 +22,7 @@ public class Student {
     }
 
     /*--------------생성자---------------- */
-    public void setSerialNum(int serialNumber) {
+    public static void setSerialNum(int serialNumber) {
         Student.serialNum = serialNumber;
     }
 
@@ -33,6 +33,7 @@ public class Student {
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
+    /*-------학생 입장에서 교통수단을 타는 함수---------- */
 
     public void takeBus(Bus bus) {
         bus.take(1000);

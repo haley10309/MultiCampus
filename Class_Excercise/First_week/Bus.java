@@ -1,4 +1,4 @@
-package Class_Excercise;
+package Class_Excercise.First_week;
 
 public class Bus {
     int busNumber;
