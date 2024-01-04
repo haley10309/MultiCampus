@@ -1,8 +1,7 @@
 package Class_Excercise;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 
 public class MyDate {
     private int day;
@@ -33,44 +32,35 @@ public class MyDate {
         this.year = year;
     }
 
-    public MyDate(int day, int month, int year) {
+    public MyDate(int day, int month, int year) { //생성자
         setYear(year);
         setMonth(month);
         setDay(day);
 
     }
 
-    public  boolean isValid(MyDate day1) {
+    public boolean isValid(MyDate day1) {
         boolean result = false;
-        if (day1.month <= 7) { // 1~7월
-            if ((day1.month / 2) == 0) { // 2,4,6월
-                if (day1.month == 2) { // 2월
-                    if (day1.day <= 28) {
-                        result = true;
-                    }
-                } else {// 4,6월
-                    if (day1.day <= 30) {
-                        result = true;
-                    }
-                }
-            } else { // 1,3,5,7월
-                if (day1.day <= 31) {
-                    result = true;
-                }
+        List<Integer> thirty_days = Arrays.asList(4, 6, 9, 11);
+        List<Integer> thirtyOne_days = Arrays.asList(1, 3, 5, 7, 8, 10, 12);
+
+        if (thirty_days.contains(day1.month)) {
+            if (day1.day <= 30) {
+                result = true;
             }
-        } else { // 8~12월
-            if ((day1.month / 2) == 0) { // 8,10,12월
-                if (day1.day <= 31) {
-                    result = true;
-                }
-            } else { // 9,11월
-                if (day1.day <= 30) {
-                    result = true;
-                }
+        } else if (thirtyOne_days.contains(day1.month)) {
+            if (day1.day <= 31) {
+                result = true;
             }
+        } else if(day1.month==2) { //2월 일때
+            if (day1.day <= 28) {
+                result = true;
+            }
+        }else{
+            result = false;
         }
+       
         return result;
     }
-    
 
 }
