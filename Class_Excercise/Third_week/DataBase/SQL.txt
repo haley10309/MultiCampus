@@ -1,0 +1,100 @@
+1. SQL
+    stuctured Query Language 
+    1-1. SQL 문장의 구성요소
+        예약어 (reserved word)
+        연산자 (operator) - 단항, 이항 연산자, 수식, 문제, 논리, 계층형 쿼리, set 연산자
+        의사컬럼 (가상컬럼, pseudo column) _ROWNUM, ROWID(각 row가 저장된 주소값)
+        함수 (function) - 내장 함수, 사용자 정의 함수
+        표현식 (expression) 
+            -select 리스트
+            - WHERE
+    1-2. terminology 
+        - Row : 행
+        - column : 열 , 보통 첫번째 열이 primary key임
+    1-3. DDL 
+        - CREATE : 객체 생성
+            ex> CREATE TABLE table_name~~;
+            1-3-1. 데이터 타입 
+                INT /INTEGER : 정수
+                SMALLINT : INT보다 작은 정수
+                CHAR(n) / CHARACTER(n) : 길이가 n인 고정 길이의 문자열
+                CHARCHAR(n) / CHARATER VARYING(n)/VARCHAR2(n) : 최대 길이가 n인 가변길이의 문자열
+                NUMERIC(p,s) /DECIMAL(p,s) : 고정소수점 실수, p는 소수점 제외한 전체숫자 길이, s는 소수점 이하 길이
+                PLOAT(n) : 길이가 n인 부동 소수점 실수 
+                REAL : 부동 소수점 실수 
+                DATE : 년, 월 , 일
+                TIME : 시, 분, 초
+                DATETIME : 날짜와 시간 
+            1-3-2. 예시
+                customer_id VARCHAR2(20) NOT NULL : customer_id를 길이가 최대 20인 가변 길이 문자열 데이터로 하고 , null을 허용하지 않음. (중복 가능)
+                bonus_point INT DEFAULT 0 : bonus_point를 정수형으로 하고 , 입력된 bonus_point가 없다면 0이 기본으로 저장되도록 함.
+                PRIMARY_KEY(customer_id) : 고객 아이디를 기본키로 지정
+                UNIQUE(customer_name) : customer_name를 대체키로 지정, null 가능, 중복 불가
+
+        - ALTER : 수정하기
+            ex> ALTER TABLE DEPT01 MODIFY DNAME VARCHAR2(20);
+            DEPT01테이블 안에 있는 DNAME이라는 열의 데이터 타입을 VARCHAR2(20)으로 바꿈
+            1-3-3.
+                ADD COLUMN 
+                MODIFY COLUMN 
+                DROP COLUMN
+
+        - TRUNCATE : 삭제 (빠름, 복구도 안됨)
+            ex> TRUNCATE TABLE DEP01;
+
+    1-4. DML(data manipulation Language)
+        - SELECT  : 테이블이나 뷰에 잇는 데이터 조회할 때 사용
+            ex> SElECT * FROM DEPT01;
+                FROM table_num1, table_name2;
+                WHERE conditions ...
+                GROUP BY column_name1, column_name2
+        - INSERT : 테이블에 데이터 추가
+            ex> INSERT INTO DEPT VALUES(50, '총무부' , '서울);
+                INSERT INTO table_name(column_name1,column_name2) VALUES (value1, value2)
+                INSERT into table_name SElECT statements ...;
+
+        - UPDATE : 데이터 수정 
+            ex> UPDATE DEPT SET LOC = '부산' WHERE DNAME = '총무부' ;
+                UPDATE table_name SET column_name1 = value1,column_name2 = value2 WHERE conditions;                
+
+        - DELETE : 데이터 삭제 
+            ex> DELETE FROM DEPT WHERE DEPTNO=50;
+            rollback; -> 다시 복구 
+
+    1-5. DCL (Data Control Language) 
+        - GRANT : 권한 할당 
+            GRANT 권한명 TO 사용자 or ROLE명;
+        - REVOKE : 할당된 
+            REVOKE 권한명 FROM 사용자 or ROLE명;
+
+    1-6. TCL (Transaction Control Language) : 데이터의 일관성을 유지한 채 안정적으로 데이터를 복구하기 위해 사용
+        - COMMIT; 장기적 저장 버튼
+        - ROLLBACK; 삭제하기 전으로 돌아감
+
+    1-7. 제약 조건(CONSTRAINTS) 
+        - NOT NULL
+        - UNIQUE : 데이터의 유일성 보장 
+                ex> ALTER TABLE EMP ADD CONSTRAINT EMP_uk_deptno UNIQUE (deptno);
+                    ALTER TABLE EMP DROP CONSTRAINT EMP_uk_deptno;
+        - PRIMARY_KEY : NOT NULL + UNIQUE 
+                ex> CREATE TABLE emp5(empno NUMBER CONSTRAINT emp5_pk_empno PRIMARY_KEY);
+                    ALTER TABLE EMP ADD CONSTRAINT EMP_pk_empno PRIMARY_KEY;
+        - FOREIGN KEY : 참조 관계 컬럼은 데이터 형이 일치 해야 함
+                ex> ALTER TABLE EMP ADD CONSTRAINT EMP_fk_deptno FOREIGN_KEY(deptno) REFERENCES dept (deptno);
+                1) ON DELETE OPTION 
+                    i)ON DELETE NO ACTION : 참조하는 테이블이 존재하면 삭제 불가
+                    ii)ON DELETE CASCADE : 참조하는 테이블의 내용까지 삭제 
+
+        - CHECK : 컬럼의 값을 어떤 특정 범위로 변환
+        - DEFAULT : 데이터를 입력하지 않아도 지정된 값이 기본으로 입력 
+                ex> DCREATE TABLE emp2 
+                    (컬럼 생략, 
+                    hiredate Date ) 
+    1-8. 데이터 조회
+        - SELECT : 데이터 베이스로부터 저장되어 있는 데이터를 검색하는데 사용 
+                ex> SELECT * FROM DEPT;
+                별칭 부여 가능
+                ex> SELECT ename, sal,comm,  sal * 12 + nvl(comm,0) ANNSAL from emp;
+                산술 연산도 가능
+
+        - NULL의 연산규칙 : NULL은 사칙 연산 적용해도 모두 NULL 임. 
