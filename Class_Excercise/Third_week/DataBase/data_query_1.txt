@@ -69,4 +69,3 @@ select * from emp;
 
 SELECT ename, sal,comm,  sal * 12 + nvl(comm,0) ANNSAL
 from emp;
-
