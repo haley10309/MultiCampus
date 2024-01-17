@@ -17,7 +17,7 @@ public class Solution2 {
             Arrays.sort(arr);
             int small = arr[0];
             int big = arr[9];
-            int sum = 0;
+            double sum = 0;
             int count =0;
             for (int i = 1; i < 9; i++) { // 최솟값과 최댓값을 제외한 평균
                 if((arr[i] != small)&&(arr[i] != big)){
@@ -26,7 +26,7 @@ public class Solution2 {
                 }
                 
             }
-            avg_arr[test_case - 1] = Math.round(sum / count);
+            avg_arr[test_case - 1] = (int)Math.round(sum / count);
         }
         for (int k = 0; k < T; k++) {
             System.out.println("#" + (k + 1) + " " + avg_arr[k]);
