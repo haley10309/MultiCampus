@@ -96,3 +96,40 @@ select
 from EMP
 group BY TO_CHAR(HIREDATE,'YYYY') ,DEPTNO
 ORDER  BY TO_CHAR(HIREDATE,'YYYY') DESC;
+
+
+--1.16(화)
+--1번 문제
+SELECT e.DEPTNO , d.DNAME ,e.EMPNO , e.ENAME , e.SAL
+FROM EMP e,DEPT d
+WHERE e.DEPTNO = d.DEPTNO and e.sal>2000
+ORDER BY e.DEPTNO;
+
+--2번 문제 
+SELECT e.DEPTNO, d.dname , e.empno, e.ENAME , e.JOB , e.SAL
+FROM emp e right outer join DEPT d on (e.deptno = d.deptno)
+ORDER by d.DEPTNO;
+
+--3번 문제
+SELECT d1.DEPTNO, d1.DNAME ,
+    e1.EMPNO , e1.ENAME , e1.MGR , e1.SAL , e1.DEPTNO, 
+    s1.LOSAL , s1.HISAL , s1.GRADE , 
+    e2.EMPNO as MGR_EMPNO , e2.ENAME as MGR_ENAME
+FROM emp e1 left outer join EMP e2 on e1.mgr = e2.empno 
+    join SALGRADE s1 on (s1.LOSAL <= e1.sal and e1.sal <= s1.HISAL )
+    right outer join DEPT d1 on   e1.DEPTNO =d1.DEPTNO
+ORDER by d1.DEPTNO ,d1.DNAME;
+
+
+--1번 문제 
+SELECT e.JOB , e.EMPNO, e.ENAME , e.sal, d.DEPTNO, d.DNAME
+FROM emp e, DEPT d
+where job in (SELECT job FROM emp where ename ='ALLEN' ) 
+and e.DEPTNO = d.DEPTNO;
+
+--2번 문제
+SELECT e.EMPNO, e.ename , e.JOB , e.DEPTNO, d.DNAME, d.LOC
+FROM EMP e , DEPT d 
+where e.DEPTNO = 10 
+and e.job not in (select JOB from emp where DEPTNO = 30 )
+and e.DEPTNO = d.DEPTNO

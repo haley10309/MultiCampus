@@ -1,4 +1,4 @@
-package Class_Excercise.Third_week.colloection;
+package Third_week.colloection;
 
 public class Member {
     private int memberId; // 회원 아이디

@@ -1,8 +1,8 @@
-package Class_Excercise.Third_week.colloection.arraylist;
+package Third_week.colloection.arraylist;
 
 import java.util.ArrayList;
 
-import Class_Excercise.Third_week.colloection.Member;
+import Third_week.colloection.Member;
 
 public class MemberArrayList {
     private ArrayList<Member> arrayList;  // ArrayList 선언 

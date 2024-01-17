@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Sorting_system;
+package Second_week.Sorting_system;
 
 public class BubbleSort implements Sort {
 

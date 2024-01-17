@@ -1,9 +1,10 @@
-package Class_Excercise.Third_week.colloection.arraylist;
+package Third_week.colloection.arraylist;
 
 import java.io.IOException;
 import java.util.HashSet;
 
-import Class_Excercise.Third_week.colloection.Student;
+import Third_week.colloection.Student;
+
 
 public class StudentTest {
     public static void main(String[] args)throws IOException{

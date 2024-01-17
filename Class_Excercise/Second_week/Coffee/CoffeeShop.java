@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Coffee;
+package Second_week.Coffee;
 
 import java.util.ArrayList;
 

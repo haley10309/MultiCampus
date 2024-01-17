@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Council;
+package Second_week.Council;
 
 public class Least_job implements Scheduler {
 

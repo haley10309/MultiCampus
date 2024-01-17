@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.shoppingmall;
+package Second_week.shoppingmall;
 
 public class Customer {
     StringBuilder sb = new StringBuilder();

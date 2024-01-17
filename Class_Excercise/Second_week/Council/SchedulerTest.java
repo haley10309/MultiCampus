@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Council;
+package Second_week.Council;
 
 import java.io.BufferedReader;
 import java.io.IOException;

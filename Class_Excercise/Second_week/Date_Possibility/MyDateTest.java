@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Date_Possibility;
+package Second_week.Date_Possibility;
 
 import java.io.BufferedReader;
 import java.io.IOException;

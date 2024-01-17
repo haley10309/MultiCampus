@@ -1,4 +1,4 @@
-package Class_Excercise.Third_week.colloection;
+package Third_week.colloection;
 
 public class Student {
     private String studentId; // 학생 아이디

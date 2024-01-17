@@ -1,4 +1,4 @@
-package Class_Excercise.First_week;
+package First_week;
 
 public class Taxi {
     public String licensePlate;

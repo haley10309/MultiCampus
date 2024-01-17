@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Driving;
+package Second_week.Driving;
 
 import java.io.IOException;
 

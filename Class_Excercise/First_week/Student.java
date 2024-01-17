@@ -1,4 +1,4 @@
-package Class_Excercise.First_week;
+package First_week;
 
 public class Student {
     private static int serialNum = 1000; // 일련번호

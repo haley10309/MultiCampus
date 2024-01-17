@@ -1,4 +1,4 @@
-package Class_Excercise.Third_week.Thread;
+package Third_week.Thread;
 
 import java.io.IOException;
 import java.awt.Toolkit;

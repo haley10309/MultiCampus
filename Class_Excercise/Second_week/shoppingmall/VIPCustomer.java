@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.shoppingmall;
+package Second_week.shoppingmall;
 
 public class VIPCustomer extends Customer {
     double saleRatio;

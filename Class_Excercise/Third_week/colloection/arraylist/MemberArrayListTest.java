@@ -1,6 +1,6 @@
-package Class_Excercise.Third_week.colloection.arraylist;
+package Third_week.colloection.arraylist;
 
-import Class_Excercise.Third_week.colloection.Member;
+import Third_week.colloection.Member;
 
 public class MemberArrayListTest {
     public static void main(String[] args) {

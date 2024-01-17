@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Game_playing;
+package Second_week.Game_playing;
 
 public abstract class PlayerLevel {
     public abstract  void run();

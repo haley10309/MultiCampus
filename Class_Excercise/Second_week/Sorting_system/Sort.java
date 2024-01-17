@@ -1,4 +1,4 @@
-package Class_Excercise.Second_week.Sorting_system;
+package Second_week.Sorting_system;
 
 public interface Sort {
     public void ascending(int[] number);
