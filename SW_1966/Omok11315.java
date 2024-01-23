@@ -54,7 +54,7 @@ public class Omok11315 {
                             }
 
                         }
-                        if ((r + 5 >= N) && (c >= 4)) {
+                        if ((r + 5 <= N) && (c >= 4)) {
                             if ((arr[r][c].equals(arr[r + 1][c - 1]))
                                     && (arr[r][c].equals(arr[r + 2][c - 2]))
                                     && (arr[r][c].equals(arr[r + 3][c - 3]))
