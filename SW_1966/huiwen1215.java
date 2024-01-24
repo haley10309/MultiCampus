@@ -16,7 +16,6 @@ public class huiwen1215 {
 
         for (int test_case = 1; test_case <= 10; test_case++) {
             String[][] arr = new String[8][8];
-            Map<String, Integer> map = new HashMap<>();
             int hui_neng = 0;
 
             sb.append("#").append(test_case).append(" ");

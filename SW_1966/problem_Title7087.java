@@ -33,7 +33,7 @@ public class problem_Title7087 {
                     char suppose_before = (char)(index_char-1);
                     char suppose_index = (char)(before+1);
                     
-                    if(index_char==before){
+                    if(index_char==before     ){
                         
                     }else if (suppose_index==index_char){
                         result ++;
