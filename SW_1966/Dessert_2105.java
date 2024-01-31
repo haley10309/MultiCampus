@@ -16,7 +16,7 @@ public class Dessert_2105 {
         for (int test_case = 1; test_case <= T; test_case++) {
             int num = sc.nextInt();
             int[][] line = new int[num][num];
-            for(int i = 0 ;i<num ; i++){
+            for(int i = 0 ;i<num ; i++){//입력 받기
                 for(int j = 0 ;j<num ;j++){
                     line[i][j] = sc.nextInt();
                 }
@@ -24,7 +24,7 @@ public class Dessert_2105 {
             for(int i = 0 ;i<num ;i++){
                 for(int j = 0 ;j<num ;j++){
                     if((i>=1&&i<=(num-2))||(j>=1&&j<=(num-2))){
-                        
+
                     }
                 }
             }
