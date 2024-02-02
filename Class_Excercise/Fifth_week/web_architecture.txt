@@ -232,6 +232,33 @@
                     absolute : 원하는 위치에 지정
                     fixed : 지정한 위치에 고정해 배치 (브라우저 기준)
         -z-index: 한 요소위에 다른 요소 쌓기 위해 순서를 지정, 값이 작을 수록 아래에 쌓이고, 명시하지 않을경우 제일 먼저 삽입된 요소가 1을 가지고 ,그 후 추가되는 요소들은 값이 점점 커지게 됨.
+    
+    -css 연결 선택자
+        -하위 선택자 : 부모요소에 포함된 하위 요소 모두에 스타일이 적용되는 것, 손자 요소 포함
+                    ex> #container ul{text-align : center;}
+        -자식 선택자 : 부모 바로 밑에 자식에게만 스타일이 적용되는 것
+                    ex> #container > ul (text-align: center ;)
+        -인접 형제 선택자: 구조상 같은 부모를 가진 형제 요소 
+                    ex> h1+ul{text-align : center;} ->h1이랑 가장 가까운 ul한테만 적용
+        -형제 선택자 : 모든 형제 요소에 적용
+                    ex> h1~ul(text-align: center ; ) h1과 같은 행렬에 있는 ul들에게 적용 
+        -속성 선택자 : 태그 안에서 사용하는 속성들의 값에 따라 스타일 지정
+                    ex> [target = "_blank"]{text-align : center ; }
+                        [target ~= "_blank"]{text-align : center ; }
+                        [target |= "_blank"]{text-align : center ; }
+                        [target ^= "_blank"]{text-align : center ; }
+                        [target $= "_blank"]{text-align : center ; }
+                        [target *= "_blank"]{text-align : center ; }
+    -css 속성 가상 클래스 
+        -가상 클래서 (pseudo class) : 클릭하거나 마우스를 올려놓는 등 특정 동작을 할 때 스타일 적용을 위해 사용
+            :link - 아직 방문하지 않은 링크에 스타일 적용
+            :visited -한 번이상 방문한 링크에 스타일 적용
+            :hover - 마우스 커서를 올려놓았을 때 스타일 적용
+            :active - 링크나 이미지를 누르고 있을 때 스타일 적용
+            :focus - 포커스가 맞춰졌을 때 스타일적용 (텍스트 박스,검색 창)
+4. 반응형 웹 : 접속한 기기에 따라서 레이아웃을 바꿔서 보여주는 디자인 -> 웹 표준
+
+
 
 
 
