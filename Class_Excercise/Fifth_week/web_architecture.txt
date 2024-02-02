@@ -257,6 +257,26 @@
             :active - 링크나 이미지를 누르고 있을 때 스타일 적용
             :focus - 포커스가 맞춰졌을 때 스타일적용 (텍스트 박스,검색 창)
 4. 반응형 웹 : 접속한 기기에 따라서 레이아웃을 바꿔서 보여주는 디자인 -> 웹 표준
+    -뷰포트 (viewport) : 접속한 사용자에게 보여지는 화면 영역 
+            <meta name ="viewport" content ="width = device-width,inital-scale = 1">
+            @media  미디어 유형 [and 조건] *[and 조건] {CSS Code ; }
+                -미디어유형 종류 
+                    -all 
+                    -print
+                    -screen : 컴퓨터 스크린 (스마트폰 포함)
+                    -tv 
+                    -aural :음성 합성 장치
+                    -braile : 점자 표시 장치
+                    -handheld : pad 처럼 손에 들고 다니는 장치
+                    -projection : 프로젝터 
+                    -tty: 디스플레이 기능이 제한된 장치
+                    -embossed : 점자 프린터
+            ex> @media screen and(max-width : 1024px){
+                body{
+                    background : url(image/choco.jpg) no-repeat fixed;
+                    background-size : cover;
+                }
+            }
 
 
 

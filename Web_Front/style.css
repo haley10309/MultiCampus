@@ -13,6 +13,9 @@ body {
 .side_bar {
     width: 200px;
     padding: 20px;
+    border:10px;
+    word-wrap: break-word;
+
 }
 
 #main {
@@ -29,3 +32,8 @@ body {
     font-size: 30px;
     text-align: center;
 }
+
+hr {
+    border: 1px solid gray;
+    margin: 10px 0;
+ }
