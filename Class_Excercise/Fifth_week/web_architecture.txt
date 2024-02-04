@@ -271,12 +271,15 @@
                     -projection : 프로젝터 
                     -tty: 디스플레이 기능이 제한된 장치
                     -embossed : 점자 프린터
-            ex> @media screen and(max-width : 1024px){
-                body{
-                    background : url(image/choco.jpg) no-repeat fixed;
-                    background-size : cover;
+                ex> @media screen and(max-width : 1024px){
+                    body{
+                        background : url(image/choco.jpg) no-repeat fixed;
+                        background-size : cover;
+                    }
                 }
-            }
+                -미디어쿼리 
+                    -화면 회전 : orientation (protrait : 새로 / landscape : 가로 )
+                    
 
 
 

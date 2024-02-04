@@ -37,3 +37,20 @@ hr {
     border: 1px solid gray;
     margin: 10px 0;
  }
+#contact{
+    float : right ; 
+    background-color: #ff8c8c;
+    border-color: rgb(249, 86, 86);
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    border-radius: 30%;
+    position : fixed;
+    bottom : 50px; 
+    right : 50px;
+  
+    padding: 10px;
+    font-size:15px; /* 표 설명글 글자 크기 */
+    margin:10px; /* 표 설명글 주변 여백 */
+    font-weight:bold; /* 표 설명글 글자 굵게 */
+}
