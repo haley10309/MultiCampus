@@ -1,0 +1,54 @@
+Java script
+
+    = 컴파일 언어가 아닌 interpreter 언어
+    프로그램을 있는 그대로 번역해서 실행 시키는 소프트웨어
+
+    alert : 팝업 알림 
+    promt : 질문 -> 대답 : var 에 담으면 됨.
+
+-함수 
+    function 함수 이름 (x){
+        return x*x;
+    }
+    var 변수명 = new Funciton("x","return x*x");
+
+    var 변수명 = function(x){
+        return x*x;
+    };
+    var 변수명 = x => x*x;  화살표 함수 표현
+
+-변수의 영역
+    javascript는 function기반의 영역을 사용
+    function 안에 if문 안에 있어도 밖에 있는 것과 마찬가지.
+
+-매개변수가 있는 함수
+    기본 규칙은 java와 같음
+    but 매개변수 개수가 맞지 않아도 함수는 정상적으로 실행됨. 
+    매개 변수가 2개가 넘어올 수도 있고 1개가 넘어올 수도 있는 상황이면 
+    2개 매개 변수로 함수를 쓰고, 
+    if(numberTwo ==undefined ){
+
+    }
+    이렇게 undefined 를 활용해서 if문을 작성할 수 있다. 
+
+-중첩 함수 :nested function
+    함수안에 함수가 다시 포함 되어 감추고 싶은 기능을 구현
+    함수 안의 if나 while문 안에는 중첩 함수를 작성할 수 없다.
+
+-재귀 함수
+    함수 정의문 내에서 작성한 코드로 함수를 다시 호출
+
+-콜백 함수
+    다른 함수에 인수로 넘겨지는 함수
+    ex>
+    function getCalcNumbers( callback ){
+        var result = callback(10, 60);
+        return result;
+    }
+    var callbackFunction = function(numberone, numberTwo){
+        return numberOne + numberTwo;
+    }
+    var result = getCalcNumbers(callbackFunction);
+
+-함수를 리턴하는 함수
+    중첩 함수와 유사하지만 , 함수를 리턴하는 함수
