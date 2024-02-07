@@ -56,3 +56,5 @@ Java script
 -confirm 
     : 확인/ 취소 대답 받는 팝업 띄우는 함수
 
+-constructor : 생성자
+    

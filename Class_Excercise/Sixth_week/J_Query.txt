@@ -2,3 +2,12 @@
 $("h1") 으로 쓰면 됨. 
 
 ex> $("h1").text("where to?");
+<head>
+    <script>
+        $("h1").text("Where to?");
+    </script>
+</head>
+<body>
+    <h1>where do you want to go?</h1>
+    <p>plan your next adventure</p>
+</body>
