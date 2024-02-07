@@ -1,3 +1,4 @@
+
 var scores = [1, 2, 3, 4, 5, 6];
 var totalScores = 0;
 
@@ -7,3 +8,4 @@ for (var i = 0; i < scores.length; i++) {
 var averageScores = Math.round(totalScores / scores.length);
 console.log(averageScores);
 document.write(averageScores + "<br>");
+//document.write("<h1>where do you want to go?</h1>");

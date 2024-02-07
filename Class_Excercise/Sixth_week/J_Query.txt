@@ -11,3 +11,52 @@ ex> $("h1").text("where to?");
     <h1>where do you want to go?</h1>
     <p>plan your next adventure</p>
 </body>
+
+-하위요소 셀렉팅 
+
+    -자식만 가져오기 
+        destination > li
+
+    - 손자까지 다 가져오기 
+        destination li
+    
+    - 다중 요소 셀렉팅 
+        .promo , #france
+    
+    - 처음과 끝
+        $("#destination li:first "); 
+        first 는 첫번째 요소만 
+        $("#destination li:last ");
+        last 는 마지막 요소만
+    
+    -홀수 번째, 짝수 번째 선택
+        $(" $destination li :odd");
+        $(" $destination li :even"); 0포함
+    
+    -그 외 위치 셀렉팅 
+        $("li : eq(index)");    li요소 중 index가 참조하는 요소를 불러옴
+        $("li : nth-child(숫자n)");
+        $("li : first-of-type");    li 요소 무리 중에서 첫번째 요소들을 선택
+        $("li : last-of-type");     li 요소 무리 중에서 마지막 요소들을 선택
+
+<traversing>
+
+    -월등히 빠르게 손자 요소 다 가져오기 
+        $("destinations").find("li");   
+        $("li").first();
+        $("li").last();
+
+    - 중간요소 찾기
+        첫째 요소 찾기 $("li").first();
+        그 다음 요소 찾기 $("li").first().next();
+
+        혹은 마지막 요소 찾고 , 그 이전으로 보기 $("li").last().prev();
+    
+    -부모요소 찾아가기
+        $("li").first().parent();
+
+    -자식요소 찾아가기 (손주x)
+        $("destinations").children("li");
+        (손주 o )
+        $("destinations").children("li").children("li");
+        
