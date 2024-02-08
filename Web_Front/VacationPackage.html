@@ -16,7 +16,12 @@
         $(this).remove();
 
       })
-      $(".vacation").on("keyup",".quantity",function(){
+      $(".vacation").on("keyup", ".quantity", function () { //keyboard 로 숫자를 입력했을 때 가격
+        var price = +$(this).closest(".vacation").data("price");
+        var quantity = +$(this).val();
+        $("#total").text(price * quantity);
+      })
+      $(".vacation").on("click", ".quantity", function () { //keyboard 로 숫자를 입력했을 때 가격
         var price = +$(this).closest(".vacation").data("price");
         var quantity = +$(this).val();
         $("#total").text(price * quantity);
@@ -43,7 +48,7 @@
           </ul>
           <input type='number' class='quantity' value='1'>
         </li>
-        <p style="color:#FFFFFF;">Total Price : $<span id='total' >499.99</span></p>
+        <p style="color:#FFFFFF;">Total Price : $<span id='total'>499.99</span></p>
       </ul>
       <!-- ============================================== -->
       <ul>
@@ -60,7 +65,8 @@
       </ul>
       <!-- ============================================== -->
       <ul>
-        <li class='vacation' data-price='299.99'>
+        <li class='vacation' data-price='299.99'>   
+          <!-- data라는 속성안에 price라는 속성이 있음. -->
           <h2>Visit Japan</h2>
           <p>Comments on this deal:</p>
           <ul class="comments">

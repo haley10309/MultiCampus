@@ -39,10 +39,10 @@ ex> $("h1").text("where to?");
         $("li : first-of-type");    li 요소 무리 중에서 첫번째 요소들을 선택
         $("li : last-of-type");     li 요소 무리 중에서 마지막 요소들을 선택
 
-<traversing>
+<traversing> id = "destinations"
 
     -월등히 빠르게 손자 요소 다 가져오기 
-        $("destinations").find("li");   
+        $("#destinations").find("li");   
         $("li").first();
         $("li").last();
 
@@ -56,7 +56,67 @@ ex> $("h1").text("where to?");
         $("li").first().parent();
 
     -자식요소 찾아가기 (손주x)
-        $("destinations").children("li");
+        $("#destinations").children("li");
         (손주 o )
-        $("destinations").children("li").children("li");
-        
+        $("#destinations").children("li").children("li");
+
+클릭 이벤트
+    -$("button").on("click",function(){
+        var vacation = $(this).closest(".vacation");
+        var amount = vacation.data("price");
+        var price = $("<p> From $"+amount+"</p>);
+        vacation.append(price);
+        $(this).remove();
+    })
+
+    <li class='vacation' data-price='299.99'> //data라는 속성 안에 price라는 속성이 있음.
+          <h2>Visit Japan</h2>
+          <p>Comments on this deal:</p>
+          <ul class="comments">
+            <li>"Never been, but can't wait!</li>
+            <li>&nbsp;</li>
+          </ul>
+          <button>GET PRICE</button>
+        </li>
+
+        .data (<name>) //값을 가져올 수도 있고, 
+        .data (<name>,<value>)  //값을 지정하는 키 값을 가져올 수 있음. 
+
+-Form element 
+    -val() : 선택한 요소의 값을 가져오거나 , 새로운 값을 적용
+            <input type = "text" id = "email" placeholder = "Email을 입력하세요."/>
+
+            var email = $("#email").val();
+            $("#email").val("Email 입니다"); ->Email input 에 값을 세팅합니다. 입력 값 초기화에 유용
+
+    -select 
+            <select id = "jobs">
+                <option value = "0" >선택하세요</option>
+                <option value = "1" >회사원</option>
+                <option value = "2" >학생</option>
+                <option value = "3" >교수</option>
+            </select><br/>
+
+            var jobs = $("#jobs").val();    -> jobs select 의 선택된 값을 가져옴.
+            $("#jobs").on("change", function(){
+                alert($("#jobs option : selected ").text());    -> jobs 의 선택 항목이 바뀌었을 때, 옵션의 text 값을 가져와 경고창으로 보여줌
+            })
+    -radio/checkbox
+            -prop() : 선택한 요소의 상태 속성 값을 가져옴
+                <input type = "radio" name "age " id = "age10" value ="10">
+                console.log($("input[type=radio][name=age]:checked").length);  -> radio/checkbox 가 선택된 갯수를 가져옴 / 선택했는지 안 했는지 판단 할 수 있음. 
+                $("input[type = radio][name=age]").eq(1).prop("checked",true);   ->radio/checkbox 를 강제로 선택하게 합니다. 
+    -submit
+            -attr() 로 요소의 속성값을 가져오거나 새로운 값으로 지정 가능
+                <input type ="button" id="done" value ="완료"/>
+                $("#done").on("click",function(){
+                    var form = $("#signUpform");
+                    $(form).attr("action","/doSignUp"); form 테그 내에 있는 속성인 action을 링크"/doSignUp"으로 보내기
+
+                    $(form).attr({
+                        "method" : "post"
+                        "enctype" : "multipart/formdata"  --> 파일 첨부할 때 쓰는 형식
+                    });
+                    $(form).submit();
+                })
+
