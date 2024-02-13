@@ -117,6 +117,24 @@ ex> $("h1").text("where to?");
                         "method" : "post"
                         "enctype" : "multipart/formdata"  --> 파일 첨부할 때 쓰는 형식
                     });
-                    $(form).submit();
+                    $(form).submit();           폼 자체를 제출한다는 뜻
                 })
+-AJAX : 일반적인 http 요청 - 동기방식이 아닌 비동기 방식 
+        필요할 때마다 데이터 불러오기
+        메소드 형식 ㄱ
+            $.ajax({
+                url : "전송하고자 하는 페이지",
+                type : "전송방식",
+                data : "전송할 데이터",
+                dataType : "요청한 데이터 형식" ,
+                success: function(data){
+                    전송 성공 시 실행될 코드;
+                },
+                error : function(){
+                    전송 실패 시 실행될 코드;
+                }
+
+            });
+        json (javaScript object Notation) : 데이터를 전달할 때 사용하는 표준 방식 (텍스트 데이터)
+        
 
