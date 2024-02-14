@@ -136,5 +136,9 @@ ex> $("h1").text("where to?");
 
             });
         json (javaScript object Notation) : 데이터를 전달할 때 사용하는 표준 방식 (텍스트 데이터)
-        
+        %실행해볼 때 Live Server 켜야 함 (마우스 오른 쪽 )
+
+        -   select box 에서 제일 많이 쓰는 방식 (ex> 쿠폰 적용 방식 )
+
+
 
