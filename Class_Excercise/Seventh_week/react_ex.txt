@@ -87,12 +87,27 @@
                 console.log(num2);
                 console.log(arr3); //앞에 두 숫자를 빼고 나머지 배열의 집합
 
-        3) 요소 복사와 결합
+        3) 요소 복사와 결합 : 복사할 때 깊은 복사가 일어나서 같이 수정됨
             ex> const arr1 = [10, 20];
                 const arr2 = [30, 40];
                 const arr3 = [...arr1];
                 const arr4 = [...arr1,...arr2];
                 console.log(arr3);
                 console.log(arr4);
+
+    -map 
+        const nameArr =["a","b","c"];
+        const nameArr2 = nameArr.map((name)=>{
+            return name;
+        })
+        console.log(nameArr2);
+        //index는 map에서 두번째 매개변수 ,첫번째는 배열 그 자체를 불러옴. 
+        nameArr.map((name,index)=> console.log(`${index}번째는 ${name}입니다.`));
+
             
-        
+-리액트 
+    특징 
+        1. 컴포넌트 기반 구조 : 페이지를 조각내어 컴포넌트라고 생각
+        2. react-native 학습 시 어플리케이션 개발 가능
+        3. ajax기능은 axios,fetch 를 사용하면 됨.
+

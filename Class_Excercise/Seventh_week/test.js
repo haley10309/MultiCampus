@@ -85,10 +85,18 @@
 // console.log(num1);
 // console.log(num2);
 // console.log(arr3);
-const arr1 = [10, 20];
-const arr2 = [30, 40];
-const arr3 = [...arr1];
-const arr4 = [...arr1, ...arr2];
-console.log(arr3);
-console.log(arr4);
+// const arr1 = [10, 20];
+// const arr2 = [30, 40];
+// const arr3 = [...arr1];
+// const arr4 = [...arr1, ...arr2];
+// console.log(arr3);
+// console.log(arr4);
 
+//================map 사용 ===============
+const nameArr = ["a", "b", "c"];
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
+console.log(...nameArr2);
+nameArr.map((name) => console.log(name));
+nameArr.map((name,index)=> console.log(`${index+1}번째는 ${name}입니다.`));
