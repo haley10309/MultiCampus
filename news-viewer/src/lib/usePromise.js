@@ -1,12 +1,23 @@
-import React ,{useState , useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
-export default function usePromise(promiseCreator, deps) {
+export default function usePromise(promiseCreator, deps){
+    // 로딩중, 완료, 실패에 대한 state 관리
     const [loading, setLoading] = useState(false);
-    const[resolved, setResolved] = useState(null);
-    const[error, setError] = useState(null);
-    return (
-        <div>
-            
-        </div>
-    );
+    const [resolved, setResolved] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const process = async () => {
+            setLoading(true);
+            try {
+                const resolved = await promiseCreator();
+                setResolved(resolved);
+            } catch (e) {
+                setError(e);
+            }
+            setLoading(false);
+        };
+        process();
+    }, deps);
+    return [loading, resolved, error];
 }
